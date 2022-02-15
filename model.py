@@ -1,5 +1,6 @@
 import numpy as np 
 import os
+import tensorflow as tf
 import skimage.io as io
 import skimage.transform as trans
 import numpy as np
@@ -53,7 +54,7 @@ def unet(pretrained_weights = None,input_size = (256,256,1)):
 
     model = Model(inputs, conv10)
 
-    model.compile(optimizer = keras.optimizers.Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
+    model.compile(optimizer = tf.keras.optimizers.Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
     
     #model.summary()
 
